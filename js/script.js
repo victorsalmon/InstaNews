@@ -7,8 +7,8 @@ url += '?' + $.param({
 $.ajax({
   url: url,
   method: 'GET',
-}).done(function(result) {
-  console.log(result);
+}).done(function(result) {  //Successfully get articles and output image and abstract
+  console.log(result.results);
 }).fail(function(err) {
   throw err;
 });
