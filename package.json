@@ -1,0 +1,19 @@
+{
+  "name": "instanews",
+  "version": "1.0.0",
+  "description": "InstaNews is an AJAX application that uses the New York Times API to dynamically retrieve content.",
+  "main": "js/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorsalmon/InstaNews.git"
+  },
+  "author": "Victor Salmon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorsalmon/InstaNews/issues"
+  },
+  "homepage": "https://github.com/victorsalmon/InstaNews#readme"
+}
