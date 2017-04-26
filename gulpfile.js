@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename');
+    browserSync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('scripts', function(){
@@ -20,4 +21,8 @@ gulp.task('watch', function(){
   gulp.watch('./js/*.js', ['scripts'])
 });
 
-gulp.task('default', ['watch'])
+gulp.task('browser-sync', function(){
+//  gulp.browserSync ()
+});
+
+gulp.task('default', ['watch']);
