@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/victorsalmon/InstaNews/issues"
   },
-  "homepage": "https://github.com/victorsalmon/InstaNews#readme"
+  "homepage": "https://github.com/victorsalmon/InstaNews#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
