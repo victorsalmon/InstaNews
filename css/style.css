@@ -2,6 +2,8 @@ body{
   background-color: black;
 }
 
-selection{
-  color: white;
+.content{
+  display:flex;
+  flex-direction: column;
+  align-content: center;
 }
