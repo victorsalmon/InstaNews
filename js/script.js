@@ -12,4 +12,3 @@ $.ajax({
 }).fail(function(err) {
   throw err;
 });
-
