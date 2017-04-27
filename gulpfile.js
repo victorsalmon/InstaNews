@@ -3,23 +3,16 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
     browserSync = require('browser-sync'),
     eslint = require('gulp-eslint');
-const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('scripts', function(){
   gulp.src ('./js/*.js')
     .pipe(uglify ())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(gulp.dest('./build/js'));
-  gulp.dest('test.min.js');
+    .pipe(gulp.dest('./build/js/'));
 });
 
-//    CSS
-//    .pipe(autoprefixer ({
-//      browsers: ['last 2 versions'],
-//    }))
-
 gulp.task('watch', function(){
-  gulp.watch('./build/js/*.js', ['scripts'])
+  gulp.watch('./js/*.js', ['scripts'])
 });
 
 gulp.task('browser-sync', function(){
