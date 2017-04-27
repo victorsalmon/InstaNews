@@ -18,12 +18,19 @@ gulp.task('scripts', function(){
 
 gulp.task ('scss', function(){
   gulp.src ('./scss/style.scss')
-    .pipe()
+    .pipe(prettyerror())
+    .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+    }))
+    .pipe(cssnano())
+    .pipe(gulp.dest('./build/css/style.min.css'));
 })
 
 
 gulp.task('watch', function(){
   gulp.watch('./js/*.js', ['scripts'])
+  gulp.watch('./scss/*.scss', ['sass'])
 });
 
 
@@ -33,7 +40,7 @@ gulp.task('browser-sync', function(){
       baseDir: './',
     }
   });
-  gulp.watch(['./build/js/*.js', './css/style.css']).on('change', browserSync.reload);
+  gulp.watch(['./build/js/*.js', './scss/*.scss']).on('change', browserSync.reload);
 });
 
 
