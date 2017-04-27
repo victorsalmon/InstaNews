@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     prettyerror = require('gulp-prettyerror');
 
-
 gulp.task('scripts', function(){
   gulp.src ('./js/*.js')
     .pipe(uglify ())
@@ -24,15 +23,14 @@ gulp.task ('scss', function(){
       browsers: ['last 2 versions'],
     }))
     .pipe(cssnano())
-    .pipe(gulp.dest('./build/css/style.min.css'));
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('./build/css'));
 })
-
 
 gulp.task('watch', function(){
   gulp.watch('./js/*.js', ['scripts'])
-  gulp.watch('./scss/*.scss', ['sass'])
+  gulp.watch('./scss/*.scss', ['scss'])
 });
-
 
 gulp.task('browser-sync', function(){
   browserSync.init({
@@ -40,9 +38,8 @@ gulp.task('browser-sync', function(){
       baseDir: './',
     }
   });
-  gulp.watch(['./build/js/*.js', './scss/*.scss']).on('change', browserSync.reload);
+  gulp.watch(['./build/js/*.js', './build/css/style.min.css']).on('change', browserSync.reload);
 });
-
 
 gulp.task('lint', function(){
     return gulp.src(['./js/*.js','!node_modules/**'])
