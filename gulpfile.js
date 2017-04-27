@@ -2,7 +2,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename');
     browserSync = require('browser-sync'),
-    eslint = require('gulp-eslint');
+    eslint = require('gulp-eslint'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    prettyerror = require('gulp-prettyerror');
+
 
 gulp.task('scripts', function(){
   gulp.src ('./js/*.js')
@@ -11,9 +16,16 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('./build/js/'));
 });
 
+gulp.task ('scss', function(){
+  gulp.src ('./scss/style.scss')
+    .pipe()
+})
+
+
 gulp.task('watch', function(){
   gulp.watch('./js/*.js', ['scripts'])
 });
+
 
 gulp.task('browser-sync', function(){
   browserSync.init({
@@ -24,11 +36,13 @@ gulp.task('browser-sync', function(){
   gulp.watch(['./build/js/*.js', './css/style.css']).on('change', browserSync.reload);
 });
 
+
 gulp.task('lint', function(){
     return gulp.src(['./js/*.js','!node_modules/**'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
+
 
 gulp.task('default', ['watch', 'browser-sync']);
