@@ -19,6 +19,6 @@ $(function (){
       
     }).fail(function(err) {
       throw err;
-    }); 1
+    });
   })
 })
