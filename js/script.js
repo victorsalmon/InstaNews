@@ -5,7 +5,8 @@ $(function (){
     var menuChoice = $(this).val();
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
     + $.param({
-      'api-key': '385dbba7ced942639ee354d262342235'
+      'api-key': '385dbba7ced942639ee354d262342235',
+      'multimedia':'true',
     }, {passive:true} );
     console.log ('url: ' + url);
 
@@ -13,7 +14,9 @@ $(function (){
       url: url,
       method: 'GET',
     }).done(function(result) {  //Successfully get articles and output image and abstract
-      console.log(result.results);
+      result.results.splice(12)
+      
+      
     }).fail(function(err) {
       throw err;
     });
