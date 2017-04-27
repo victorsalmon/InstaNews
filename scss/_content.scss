@@ -1,24 +1,59 @@
+/*Content Styles */
 body{
   background-color: black;
 }
 
-.content{
+.content{ //flex parent of section.menu and img
   align-content: center;
   display:flex;
+  padding-top: 15rem; 
   flex-direction: column;
+  p{
+    color: white;
+    font-family: "open_sanslight";
+    font-size: 1.2rem; 
+    line-height: 3.5rem;
+    text-align: center;
+  }
+  img {
+    align-self: center;
+    height: auto;
+    width: $imgSize;
+  }
+  @include tablet {
+    flex-direction: row;
+    padding-left: 8rem;
+  }
+  @include desktop {
+    padding-left: 2rem; 
+  }
 }
 
-.content p{
-  color: white;
+.menu{ 
+  //flex child of content holding .dropdown and p
+  align-items: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+}
+
+
+.dropdown {
+  margin: 0 auto;
+  width: 6rem;
+  @include tablet {
+    height: 100%;
+  }
+}
+
+.copyright {
+  color: grey;
   font-family: "open_sanslight";
-  line-height: 3.5rem;
+  padding-top: 25vh;
   text-align: center;
-}
-
-select {
-  text-align: center;
-}
-
-.menu{
-  text-align: center;
+  @include desktop {
+    padding-left: 4rem;
+    text-align: left;
+  }
 }

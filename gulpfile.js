@@ -28,8 +28,8 @@ gulp.task ('scss', function(){
 })
 
 gulp.task('watch', function(){
-  gulp.watch('./js/*.js', ['scripts'])
-  gulp.watch('./scss/*.scss', ['scss'])
+  gulp.watch('./js/*.js', ['scripts']);
+  gulp.watch('./scss/*.scss', ['scss']);
 });
 
 gulp.task('browser-sync', function(){
