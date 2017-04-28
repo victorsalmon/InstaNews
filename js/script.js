@@ -24,11 +24,16 @@ $(function (){
         return object.multimedia.length;
       });
       resultsArray.splice(12);
- //     $(.grid).append(function(){
- //       each (resultsArray)
- //     })
-      //Output Content to Page
-      console.log (resultsArray);
+
+      //Populate Grid with Results
+        console.log (resultsArray);
+      $.each (resultsArray, function(key, value){
+        $('.grid').append('<li>' + value.title + '</li>');
+        console.log ('<li>' + value.title + '</li>');
+        
+      })
+
+
 
     }).fail(function(err) {
       throw err;
