@@ -10,6 +10,7 @@ $(function (){
     + $.param({
       'api-key': '385dbba7ced942639ee354d262342235',
     }, {passive:true} );
+    $('.grid').empty ();
 
     //Retrieve NYT Content
     $.ajax({
@@ -26,14 +27,24 @@ $(function (){
       resultsArray.splice(12);
 
       //Populate Grid with Results
-        console.log (resultsArray);
       $.each (resultsArray, function(key, value){
-        $('.grid').append('<li>' + value.title + '</li>');
-        console.log ('<li>' + value.title + '</li>');
-        
+        var element = '<a href="' + value.url + '"><li><p>' + value.abstract + '</p></li></a>'
+        var image = "url('" + value.multimedia[4].url + "')"
+        $('.grid').append(element);
+        $('.grid a:last-child').css("background-image", image)
       })
 
+      //Adjust Style
+      $('.grid').css("height","auto");
+      $('.loading').css("display","none");
 
+      //Resize Header
+      //problems happening here
+      if ($('.grid a').css("width") >= "600px"){
+        $('img').css("width", "70")
+      } else{
+        $('img').css("width", "150") //How will this affect style sheets and media queries?
+      }
 
     }).fail(function(err) {
       throw err;

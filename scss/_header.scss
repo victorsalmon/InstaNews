@@ -30,6 +30,10 @@ body{
   }
 }
 
+a{
+  text-decoration: none;
+}
+
 .menu{ 
   //flex child of content holding .dropdown and p
   align-items: center;
@@ -42,9 +46,6 @@ body{
 .dropdown {
   margin: 0 auto;
   width: 8rem;
-  @include tablet {
-    height: 100%;
-  }
 }
 
 .loading {
@@ -55,11 +56,13 @@ body{
     width: 10rem;
   }
 }
-
+ul {
+  height: 25vh;
+}
 .copyright {
   color: grey;
   font-family: "open_sanslight";
-  padding-top: 25vh;
+  padding-top: 2rem;
   text-align: center;
   @include desktop {
     padding-left: 4rem;
