@@ -1,0 +1,19 @@
+.loading {
+  margin: 0 auto;
+  img {
+    height: 10rem;
+    padding: 1.5rem;
+    width: 10rem;
+  }
+}
+
+.copyright {
+  color: $medGrey;
+  font-size: 0.8rem;
+  font-family: "open_sanslight";
+  text-align: center;
+  @include desktop {
+    padding-left: 4rem;
+    text-align: left;
+  }
+}
