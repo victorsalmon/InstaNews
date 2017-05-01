@@ -3,7 +3,7 @@ $(function (){
   //Initialize jQuery-Nice-Select
   $('select').niceSelect();
 
-  //Wait for selection and then AJAX
+  //On selection set up AJAX
   $('select').on('change', function(){
     var menuChoice = $(this).val();
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
@@ -26,7 +26,7 @@ $(function (){
       });
       resultsArray.splice(12);
 
-      //Populate Grid with Results
+      //Populate Flexbox Grid with Results
       $.each (resultsArray, function(key, value){
         var element = '<a href="' + value.url + '"><li><p>' + value.abstract + '</p></li></a>'
         var image = "url('" + value.multimedia[4].url + "')"
@@ -37,7 +37,7 @@ $(function (){
       //Adjust Style
       $('.grid').css("height","auto");
       $('.loading').css("display","none");
-      $('header').addClass("slim");
+      $('body').addClass("slim");
 
     }).fail(function(err) {
       throw err;

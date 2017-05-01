@@ -2,18 +2,21 @@
 body{
   background-color: black;
   font-size: $baseFontSize;
+  margin: 0 auto;
+  max-width: 1600px;
 }
 
 header{ //flex parent of section.menu and img
   align-content: center;
   display:flex;
-  padding-top: 25vh; 
+  padding-top: 31vh;
   flex-direction: column;
+  margin: auto auto;
   p{
     color: white;
     font-family: "open_sanslight";
-    font-size: 1.2rem; 
-    padding: 1.5rem 0;
+    font-size: 0.8rem; 
+    line-height: 2.5rem;
     text-align: center;
   }
   img {
@@ -28,24 +31,33 @@ header{ //flex parent of section.menu and img
   @include desktop {
     padding-left: 2rem; 
   }
-
 }
 
 .slim{
-  padding-bottom: 3rem;
-  padding-top: 2rem;
+  header{
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    @include tablet{
+      padding-bottom: 2.5rem;
+      padding-top: 1.2rem;
+    }
+    @include desktop{
+
+    }
+  }
   section p{
     font-size: 0.8rem;
   }
   img {
     height: auto;
     width: 150px;
+    @include tablet{
+      width: 70px;
+    }
   }
-  @include tablet{
-
-  }
-  @include desktop{
-
+  .copyright{
+    padding-top: 2.0rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -76,13 +88,12 @@ a{
     width: 10rem;
   }
 }
-ul {
-  height: 25vh;
-}
+
 .copyright {
-  color: grey;
+  color: $medGrey;
+  font-size: 0.8rem;
   font-family: "open_sanslight";
-  padding-top: 2rem;
+  padding-top: 30vh;
   text-align: center;
   @include desktop {
     padding-left: 4rem;
