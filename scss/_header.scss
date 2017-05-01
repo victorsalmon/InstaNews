@@ -7,11 +7,12 @@ body{
   margin: 0 auto;
   max-width: 1600px;
 }
-
+a{
+  text-decoration: none;
+}
 img {
   width: 100%;
 }
-
 header{ //flex parent of section.menu and div/img
   align-content: center;
   align-self: center;
@@ -19,7 +20,15 @@ header{ //flex parent of section.menu and div/img
   height: 94vh;
   justify-content: center;
   flex-direction: column;
-  margin: auto auto;
+  @include tablet {
+    flex-direction: row;
+    padding-left: 1rem;
+    width: 60%;
+  }
+  @include desktop {
+    padding-left: 2rem;
+    width: 100%;
+  }
   p{
     color: white;
     font-family: "open_sanslight";
@@ -27,26 +36,52 @@ header{ //flex parent of section.menu and div/img
     line-height: 2.5rem;
     text-align: center;
   }
+  section p{
+    font-size: 0.8rem;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
   .logo {
     align-self: center;
+    animation: mobileNoNews 0.5s 1 normal linear;
     display:flex;
     height: auto;
-    width: $imgSize;
-  }
-  @include tablet {
-    flex-direction: row;
-    padding-left: 8rem;
-    width: 40%;
-
-  }
-  @include desktop {
-    padding-left: 2rem;
+    margin-bottom: 1rem;
     width: 100%;
-  }
-}
 
-a{
-  text-decoration: none;
+    @keyframes mobileNoNews {
+      0% {
+        padding-bottom: 1rem;
+        padding-right: 2rem;
+      }
+      100% {
+        padding: 0rem;
+      }
+    }
+    @keyframes tabletNoNews {
+      0% {
+        padding-right: 2rem;
+        padding-top: 2rem;
+      }
+      100% {
+        padding: 0;
+      }
+    }
+
+    @include tablet {
+      animation: tabletNoNews 0.5s 1 normal linear;
+      padding-right: 0;
+    }
+    @include desktop {
+      padding-right: 5rem;
+      transition: all 0.8s;
+      width: 150px;
+    }
+  }
 }
 
 .menu{ 
@@ -57,7 +92,6 @@ a{
   flex-direction: column;
   width: 10rem;
 }
-
 .dropdown {
   margin: 0 auto;
   width: 8rem;

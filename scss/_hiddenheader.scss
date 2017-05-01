@@ -1,23 +1,23 @@
 .slim{
   header{
     height: 24vh;
-    justify-content:space-between;
+    justify-content:left;
     padding-bottom: 3rem;
     padding-top: 2rem;
     transition: height 0.5s;
+    width: 100%;
     @include tablet{
       justify-content: left;
       height: 8vh;
-      padding: 1.2rem 0 2.5rem 0;
+      padding: 1.2rem 0 2.5rem 6.5rem;
       transition: height 0.5s;
-      width: 65%;
+    }
+    @include desktop{
+      padding-left: 2rem;
     }
     .logo{
       height: 130px;
     }
-  }
-  section p{
-    font-size: 0.8rem;
   }
   .logo {
     height: auto;
