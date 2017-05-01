@@ -4,7 +4,7 @@ body{
   font-size: $baseFontSize;
 }
 
-.content{ //flex parent of section.menu and img
+header{ //flex parent of section.menu and img
   align-content: center;
   display:flex;
   padding-top: 25vh; 
@@ -28,7 +28,27 @@ body{
   @include desktop {
     padding-left: 2rem; 
   }
+
 }
+
+.slim{
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  section p{
+    font-size: 0.8rem;
+  }
+  img {
+    height: auto;
+    width: 150px;
+  }
+  @include tablet{
+
+  }
+  @include desktop{
+
+  }
+}
+
 
 a{
   text-decoration: none;

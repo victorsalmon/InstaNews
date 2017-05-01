@@ -37,14 +37,7 @@ $(function (){
       //Adjust Style
       $('.grid').css("height","auto");
       $('.loading').css("display","none");
-
-      //Resize Header
-      //problems happening here
-      if ($('.grid a').css("width") >= "600px"){
-        $('img').css("width", "70")
-      } else{
-        $('img').css("width", "150") //How will this affect style sheets and media queries?
-      }
+      $('header').addClass("slim");
 
     }).fail(function(err) {
       throw err;
