@@ -36,7 +36,7 @@ $(function (){
 
       //Adjust Style
       $('.grid').css("height","auto");
-      $('.loading').css("display","none");
+      $('.loading').css("display","none"); //Hide ajax-loader.gif
       $('body').addClass("slim");
 
     }).fail(function(err) {
