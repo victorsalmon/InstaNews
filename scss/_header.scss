@@ -47,11 +47,27 @@ header{ //flex parent of section.menu and div/img
   }
   .logo {
     align-self: center;
-    animation: mobileNoNews 0.5s 1 normal linear;
+
     display:flex;
     height: auto;
     margin-bottom: 1rem;
     width: 100%;
+    @include tablet {
+      padding-right: 0;
+    }
+    @include desktop {
+      padding-right: 5rem;
+      width: 150px;
+    }
+  }
+  .logo, .no-news {
+    animation: mobileNoNews 0.5s 1 normal linear;
+    @include tablet {
+      animation: tabletNoNews 0.5s 1 normal linear; 
+    }
+    @include desktop {
+      animation: desktopNoNews 0.5s 1 normal linear;
+    }
 
     @keyframes mobileNoNews {
       0% {
@@ -71,17 +87,15 @@ header{ //flex parent of section.menu and div/img
         padding: 0;
       }
     }
-
-    @include tablet {
-      animation: tabletNoNews 0.5s 1 normal linear;
-      padding-right: 0;
+    @keyframes desktopNoNews {
+      0% {
+        padding-right: 1rem;
+      }
+      100% {
+        padding-right: 5rem;
+      }
     }
-    @include desktop {
-      padding-right: 5rem;
-      transition: all 0.8s;
-      width: 150px;
-    }
-  }
+  } 
 }
 
 .menu{ 
