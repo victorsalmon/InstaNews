@@ -6,6 +6,9 @@ $(function (){
   //On selection set up AJAX
   $('select').on('change', function(){
     var menuChoice = $(this).val();
+    if(userInput === "" ){
+       return
+     }
     var url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
     + $.param({
       'api-key': '385dbba7ced942639ee354d262342235',
