@@ -1,0 +1,44 @@
+@keyframes mobileEither {
+  0% {
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  100% {
+    padding: 0rem;
+  }
+}
+@keyframes tabletNoNews {
+  0% {
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+  100% {
+    padding: 0;
+  }
+}
+@keyframes desktopNoNews {
+  0% {
+    padding-right: 2rem;
+  }
+  100% {
+    padding-right: 5rem;
+  }
+}
+
+@keyframes tabletNews {
+  0% {   
+    padding-left: 2.5rem;
+  }
+  100% {
+    padding-left: 0;
+  }
+}
+
+@keyframes desktopNews {
+  0% {
+    padding-right: 1rem;
+  }
+  100% {
+    padding-right: 3.5rem;
+  }
+}

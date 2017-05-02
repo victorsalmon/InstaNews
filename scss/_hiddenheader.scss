@@ -22,28 +22,11 @@
         animation: tabletNews 0.5s ease-in-out;
         padding-top: 1rem;
         padding-right: 3.5rem;
-  //      transition: width 0.5s ease-in-out;
         width: 70px;
       }
 
       @include desktop {
         animation: desktopNews 0.5s ease-in-out;
-      }
-          @keyframes tabletNews {
-        0% {
-          
-        }
-        100% {
-          padding: 0;
-        }
-      }
-      @keyframes desktopNews {
-        0% {
-          padding-right: 1rem;
-        }
-        100% {
-          padding-right: 5rem;
-        }
       }
     }
   }
@@ -52,12 +35,3 @@
     padding-bottom: 3rem;
   }
 }
-
-//@keyframes mobileHeaderHide {
-//    0% { height: 94vh; }
-//  100% { height: 24vh; }
-//}
-//@keyframes biggerHeaderHide {
-//  0% {height: 94vh }
-//  100% {height: 8vh; }
-//}
