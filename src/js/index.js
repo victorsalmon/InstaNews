@@ -1,5 +1,7 @@
+import '../scss/style.scss';
 
 $(function (){
+
   //Initialize jQuery-Nice-Select
   $('select').niceSelect();
 
