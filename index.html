@@ -12,14 +12,14 @@
 <body>
   <header>
 
-    <section class="logo no-news">
+    <div class="logo no-news">
       <img src="./images/nyt-logo.svg">
-    </section>
+    </div>
 
     <section class="menu">
       <p>Choose a selection</p>
       <select class="dropdown">
-          <option> Sections...</option>
+          <option value="default"> Sections...</option>
           <option value="arts">Arts</option>
           <option value="health">Health</option>
           <option value="politics">Politics</option>
@@ -27,10 +27,11 @@
           <option value="technology">Technology</option>
         </select>
     </section>
-    <section class="loading">
-      <!-- Spinner populates here -->
-    </section>
   </header>
+
+  <div class="loading">
+    <!-- Spinner populates here -->
+  </div>
 
   <ul class="grid">
     <!--Results Populate Here -->

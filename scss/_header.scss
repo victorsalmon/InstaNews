@@ -36,7 +36,7 @@ header{ //flex parent of section.menu and div/img
     line-height: 2.5rem;
     text-align: center;
   }
-  section p{
+  p{
     font-size: 0.8rem;
     @include tablet {
       font-size: 0.9rem;
