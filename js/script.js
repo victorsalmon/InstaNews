@@ -4,20 +4,22 @@ $(function (){
   $('select').niceSelect();
 
   //On selection set up AJAX
-  $('select').on('change', function(){
-    var menuChoice = $(this).val();
-    var url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
-    + $.param({
-      'api-key': '385dbba7ced942639ee354d262342235',
-    }, {passive:true} );
-    $('.grid').empty ();
+  if ($('select').value!=="default"){
+    $('select').on('change', function(){
+      $('.loading').css("display","block").empty().append('<img src="../images/ajax-loader.gif">');
+      var menuChoice = $(this).val();
+      var url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
+      + $.param({
+        'api-key': '385dbba7ced942639ee354d262342235',
+      }, {passive:true} );
+      $('.grid').empty ();
+    });
+  };
 
     //Retrieve NYT Content
     $.ajax({
       url: url,
       method: 'GET',
-    }).always(function (){
-      $('.loading').append('<img src="../images/ajax-loader.gif">');
     }).done(function(result) {
     
       //Process Results Object
