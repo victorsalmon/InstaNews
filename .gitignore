@@ -1,2 +1,7 @@
 project-files
 node_modules/
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
