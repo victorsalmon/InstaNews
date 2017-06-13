@@ -12,7 +12,7 @@ $(function () {
       return;
     };
     
-    $('.loading').css("display", "block").empty().append('<img src="../images/ajax-loader.gif">');
+    $('.loading').css("display", "block").empty().append('<img src="https://raw.githubusercontent.com/victorsalmon/instanews/master/images/ajax-loader.gif">');
     console.log ("Continues running");
     url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
       + $.param({
