@@ -13,7 +13,6 @@ $(function () {
     };
     
     $('.loading').css("display", "block").empty().append('<img src="./images/ajax-loader.gif">');
-    console.log ("Continues running");
     url = 'https://api.nytimes.com/svc/topstories/v2/' + menuChoice + '.json?'
       + $.param({
         'api-key': '385dbba7ced942639ee354d262342235',
