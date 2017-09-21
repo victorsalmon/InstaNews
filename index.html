@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <title>My Title Here</title>
-    <meta name="Victor Salmon" content="RED Academy Portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-  </head>
 
-  <body>
-    <header>
-      <section class="logo no-news">
-        <img src="./images/nyt-logo.svg">
-      </section>
-      <section class="menu">
-        <p>Choose a selection</p>
-        <select class="dropdown">
+<head>
+  <title>Instanews: Your Link to the New York Times!</title>
+  <meta name="Victor Salmon" content="RED Academy Portfolio">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./build/css/style.min.css">
+</head>
+
+<body>
+  <header>
+
+    <div class="logo no-news">
+      <img src="./images/nyt-logo.svg">
+    </div>
+
+    <section class="menu">
+      <p>Choose a selection</p>
+      <select class="dropdown">
+          <option value=""> Sections...</option>
           <option value="arts">Arts</option>
           <option value="health">Health</option>
           <option value="politics">Politics</option>
           <option value="science">Science</option>
           <option value="technology">Technology</option>
         </select>
-      </section>
-      <section class = "loading">
-        <!-- Spinner populates here -->
-      </section>
-    </header>
+    </section>
+  </header>
 
-    <ul class="grid">
-      <!--Results Populate Here -->
-    </ul>
+  <div class="loading">
+    <!-- Spinner populates here -->
+  </div>
 
-    <footer>
-      <p class="copyright">© Copyright 2016 INSTANEWS</p>
-    </footer>
+  <ul class="grid">
+    <!--Results Populate Here -->
+  </ul>
 
-    <script src="./lib/jquery-3.2.1.js"></script>
-    <script src="./lib/jquery.nice-select.min.js"></script>
-    <script src="./build/webpack-bundle.js"></script>
+  <footer>
+    <p class="copyright">© Copyright 2016 <span>Instanews</span></p>
+  </footer>
 
-  </body>
+  <script src="./lib/jquery-3.2.1.js"></script>
+  <script src="./lib/jquery.nice-select.min.js"></script>
+  <script src="./build/js/script.min.js"></script>
+</body>
+
 </html>
