@@ -9,7 +9,6 @@ $(function () {
   $('select').on('change', function () {
     var menuChoice = $(this).val();
     if (menuChoice === "") {
-      console.log ("If loop runs...");
       return;
     };
     
@@ -45,9 +44,7 @@ $(function () {
       $('.grid').css("height", "auto");
       $('.loading').css("display", "none"); //Hide ajax-loader.gif
       $('body').addClass("slim");
-      console.log($('.logo'));
       $('.logo').removeClass("no-news"); //Remove no-news animations
-      console.log($('.logo'));
     }).fail(function (err) {
       throw err;
     });
